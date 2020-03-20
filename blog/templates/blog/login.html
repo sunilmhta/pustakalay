@@ -1,0 +1,21 @@
+ {% extends 'base.html' %}
+
+
+ {% block body %}
+ <div class="container">
+<h1 style="color: darkorange">Welcome to Our Library</h1>
+<p>
+	You can login here!
+</p>
+
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">Login</button>
+</form>
+<form>
+	<button formaction="/account/register">Create New Account!</button>
+</form>
+</div>
+
+ {% endblock %}

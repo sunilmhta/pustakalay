@@ -1,4 +1,6 @@
+
 """pustakalay URL Configuration
+
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -16,6 +18,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import include,url
+from roshan import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('account/',include('blog.urls')),
+    path('',views.login_redirect,name='login_redirect'),
+   	#url(r'^$',views.login_redirect,name='login_redirect')
+
+   ]
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
